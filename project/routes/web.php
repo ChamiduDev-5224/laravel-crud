@@ -14,4 +14,10 @@ use App\Http\Controllers\bookController;
 |
 */
 
-Route::resource('/', bookController::class);
+// Route::resource('/', bookController::class);
+
+
+Route::get('/', [bookController::class, 'index'])->name('index');
+Route::resource('books', bookController::class);
+
+
