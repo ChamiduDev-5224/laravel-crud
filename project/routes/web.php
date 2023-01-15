@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\booksController;
+use App\Http\Controllers\bookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\booksController;
 |
 */
 
-Route::resource('books', booksController::class);
+Route::resource('/', bookController::class);
