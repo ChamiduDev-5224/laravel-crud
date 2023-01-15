@@ -1,14 +1,21 @@
 @extends('books.layout')
 @section('content')
 
-            <div class="main_section my-auto mx-[30%] lg:mx-[20%] bg-center  border-4 rounded-lg mt-24 h-fit">
+<div class="h-32">
+@if ($errors->any())
+<div class="p-3 rounded bg-red-500 text-white m-3 w-fit">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+</div>
+@endif
+</div>
+            <div class="main_section my-auto mx-[10%] lg:mx-[20%] bg-center border-4 rounded-lg h-fit">
                 <h2 class="text-center py-8 text-gray-700 font-semibold text-[30px]">Add New Book</h2>
                 <form action="{{ route('books.store') }}" method="POST" class="flex flex-col justify-center">
                     @csrf
                     <input type="text" name="name" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Name">
                     <input type="text" name="author" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Author">
-                    <input type="text" name="genres" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Genres">
-                    <input type="text" name="price" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Price">
+                    <input type="text" name="genrce" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Genres">
+                    <input type="number" name="price" class="my-2 mx-8 rounded-md hover:border-l-fuchsia-600" placeholder="Price">
                     <button class="bg-red rounded-md bg-green-500 text-yellow-50 my-2 mx-8 p-3 hover:drop-shadow-xl active:bg-green-500/80 mb-6">Add Book</button>
                 </form>
             </div>

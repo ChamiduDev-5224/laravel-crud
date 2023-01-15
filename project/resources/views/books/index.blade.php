@@ -9,7 +9,7 @@
        <a href="{{ route('books.create')}}">
              Add Books</a> </button>
     <div class=" overflow-x-auto pt-2">
-        <table class="w-full text-sm text-left text-gray-500 h-fit dark:text-gray-400 overflow-x-scroll overflow-y-scroll">
+        <table class="w-full text-sm text-left text-gray-500 h-fit dark:text-gray-400 overflow-x-scroll  overflow-y-scroll">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -44,10 +44,10 @@
                     <td class="px-6 py-4">
                         {{ $bk->price }}
                     </td>
-                    <form action="{{ route('books.destroy',$bk->id)}}" method="POST">
                     <td class="px-6 py-4 my-auto mx-auto flex flex-row justify-center gap-3">
                         <button class="bg-green-400/60 text-gray-100 p-2 rounded-md hover:bg-green-400/40 active:scale-95"><a href="{{ route('books.show',$bk->id) }}">View</a></button>
                         <button class="bg-yellow-400/60 text-gray-100 p-2 rounded-md hover:bg-yellow-400/40 active:scale-95"><a href="{{ route('books.edit',$bk->id) }}">Update</a></button>
+                        <form action="{{ route('books.destroy',$bk->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="bg-red-400/60 text-gray-100 p-2 rounded-md hover:bg-red-400/40 active:scale-95" type="submit">Delete</button>
