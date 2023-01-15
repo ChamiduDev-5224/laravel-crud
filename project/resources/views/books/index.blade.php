@@ -68,7 +68,7 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="row">
+        <div class="paginate row">
             <div class="col-md-12">
                 {{ $book->links() }}
             </div>
