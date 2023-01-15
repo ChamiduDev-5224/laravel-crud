@@ -14,10 +14,8 @@ class bookController extends Controller
      */
     public function index()
     {
-        $book = Book::latest()->get();
-
-        return view('books.index',compact('book'))
-                ->with('i', (request()->input('page', 1) - 1) * 5);
+        $book = Book::latest()->paginate(4);
+        return view('books.index',compact('book'));
     }
 
     /**
@@ -95,7 +93,7 @@ class bookController extends Controller
         $book->update($request->all());
 
         return redirect()->route('books.index')
-                        ->with('success','Book updated successfully');
+                        ->with('success','Book updated successfully.');
     }
 
     /**
@@ -109,6 +107,6 @@ class bookController extends Controller
 
         $book->delete();
         return redirect()->route('books.index')
-                        ->with('success','Book deleted successfully');
+                        ->with('success','Book deleted successfully.');
     }
 }
