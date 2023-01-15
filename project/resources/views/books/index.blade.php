@@ -18,6 +18,7 @@
         <button class="flex flex-row bg-green-600 text-yellow-50 rounded-lg py-2 px-6 mt-2 hover:bg-green-600/80 active:scale-95">
        <a href="{{ route('books.create')}}">
              Add Books</a> </button>
+    {{-- data table --}}
     <div class=" overflow-x-auto pt-2 overflow-y-auto h-full">
         <table class="w-full text-sm text-left text-gray-500 h-fit dark:text-gray-400 overflow-x-scroll ">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
