@@ -3,7 +3,8 @@
 @section('content')
 
 
-<div class="mx-12 mt-8 h-[200px]">
+<div class="mx-12 mt-8">
+    {{-- toast section --}}
     <div class="h-24">
         @if ($message = Session::get('success'))
         <div class="p-3 rounded bg-green-500 text-green-100 mb-4 m-3 w-fit px-4">
@@ -11,6 +12,7 @@
         </div>
         @endif
         </div>
+        {{-- main section --}}
     <h1 class="mt-2 text-center text-blue-600/70 font-bold text-[28px] md:text-[48px]">Book Management System</h1>
     <div class="add_button">
         <button class="flex flex-row bg-green-600 text-yellow-50 rounded-lg py-2 px-6 mt-2 hover:bg-green-600/80 active:scale-95">

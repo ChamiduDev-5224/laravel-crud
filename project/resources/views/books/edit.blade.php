@@ -1,6 +1,7 @@
 @extends('books.layout')
 @section('content')
 
+{{-- toast section --}}
 <div class="h-32">
 @if ($errors->any())
 <div class="p-3 rounded bg-red-500 text-white m-3 w-fit">
@@ -8,6 +9,7 @@
 </div>
 @endif
 </div>
+{{-- edit section --}}
             <div class="main_section my-auto mx-[10%] lg:mx-[20%] bg-center border-4 rounded-lg h-fit">
                 <h2 class="text-center py-8 text-gray-700 font-semibold text-[30px]">Update Book</h2>
                 <form action="{{ route('books.update',$book->id) }}" method="POST" class="flex flex-col justify-center">
